@@ -1,13 +1,30 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-const Data = ({deaths, confirmed, recovered}) => (
+const DataConainer = styled.div`
+    text-align:center;
+`;
+
+const Number = styled.p`
+    font-size:2rem;
+    font-weight:bold;
+`;
+
+const Title = styled.p`
+    font-size:1rem;
+`;
+
+const Data = ({number, title}) => (
     <div>
-        <ul>
-            <li>Number of deaths: {deaths}</li>
-            <li>Number of confirmed: {confirmed}</li>
-            <li>Number of recovered: {recovered}</li>
-        </ul>
+        <Number>{number}</Number>
+        <Title>{title}</Title>
     </div>
 );
+
+Data.propTypes = {
+    number: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired
+};
 
 export default Data;

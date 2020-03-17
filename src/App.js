@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import Data from './Data';
-import CountFunctional from './CountFunctional'
+import DataList from './DataList';
 
 class App extends Component {
 
@@ -34,8 +33,10 @@ class App extends Component {
     } else {
       return(
         <>
-        <Data confirmed={this.state.confirmed} deaths={this.state.confirmed} recovered={this.state.recovered}/>
-        <CountFunctional/>
+        <DataList 
+          confirmed={this.state.confirmed} 
+          deaths={this.state.confirmed} 
+          recovered={this.state.recovered}/>
         </>
       );
     }
