@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 import './App.css';
 import Data from './Data';
+import CountFunctional from './CountFunctional'
 
 class App extends Component {
 
+  /**Whenever changes state the component gets rerendered */
   state = {
     deaths: null,
     confirmed: null, 
@@ -31,7 +33,10 @@ class App extends Component {
       return (<div>Loading today's data...</div>);
     } else {
       return(
+        <>
         <Data confirmed={this.state.confirmed} deaths={this.state.confirmed} recovered={this.state.recovered}/>
+        <CountFunctional/>
+        </>
       );
     }
   }
