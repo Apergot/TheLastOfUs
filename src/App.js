@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
+import Data from './Data';
 
 class App extends Component {
 
@@ -30,13 +31,7 @@ class App extends Component {
       return (<div>Loading today's data...</div>);
     } else {
       return(
-        <div>
-          <ul>
-            <li>Number of deaths: {this.state.deaths}</li>
-            <li>Number of confirmed: {this.state.confirmed}</li>
-            <li>Number of recovered: {this.state.recovered}</li>
-          </ul>
-        </div>
+        <Data confirmed={this.state.confirmed} deaths={this.state.confirmed} recovered={this.state.recovered}/>
       );
     }
   }
