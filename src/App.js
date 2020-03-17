@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  state = {
+    count: 10
+  };
+
+  handleInput = event => {
+    const value = event.target.value;
+    this.setState({count: value});
+  }
+
+  componentDidMount(){
+    console.log('Hey, i mounted');
+  }
+
+  render(){
+    return (
+      <>
+        <div>The counter value is {this.state.count}</div>
+        <input type="text" value={this.state.count} onChange={this.handleInput}></input>
+      </>
+    )
+  }
+
 }
 
 export default App;
