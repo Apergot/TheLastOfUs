@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const DataConainer = styled.div`
+const DataContainer = styled.div`
     text-align:center;
 `;
 
@@ -16,10 +16,10 @@ const Title = styled.p`
 `;
 
 const Data = ({number, title}) => (
-    <div>
+    <DataContainer>
         <Number>{number}</Number>
         <Title>{title}</Title>
-    </div>
+    </DataContainer>
 );
 
 Data.propTypes = {
